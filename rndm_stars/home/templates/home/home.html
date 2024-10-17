@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #02224A, #3751AE);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: #3751AE;
+        }
+        .navbar-brand {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar-brand:hover {
+            color: #AD89A2;
+        }
+        .footer {
+            background-color: #3751AE;
+            color: #fff;
+            padding: 20px 0;
+            margin-top: auto;
+        }
+        .footer a {
+            color: #AD89A2;
+        }
+        .footer a:hover {
+            color: #fff;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .section {
+            text-align: center;
+            margin: 20px;
+        }
+        .section a {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        .section a:hover {
+            color: #AD89A2;
+        }
+       .section-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .section-box {
+            width: 300px;
+            height: 300px;
+            margin: 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section-box:hover {
+            transform: scale(1.05);
+        }
+
+        .section-box a {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .section-box a:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .section-box.nature {
+            background-image: url('https://avatars.mds.yandex.net/i?id=df54eb7cd564d8247fbb3580f1c1e724_l-5298260-images-thumbs&n=13');
+        }
+
+        .section-box.hi-tech {
+            background-image: url('https://sotni.ru/wp-content/uploads/2023/08/futuristicheskii-uzor-7.webp');
+        }
+
+        .section-box.psychedelic {
+            background-image: url('https://i.pinimg.com/originals/31/21/ab/3121abfee9e0f9d473aba838a6e04e54.png');
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">RNDM_STARS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="main-content">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <h2 class="mb-4">Выберите тему</h2>
+                <div class="section-container">
+                    <div class="section-box nature">
+                        <a href="{% url 'upload_nature' %}">Природа</a>
+                    </div>
+                    <div class="section-box hi-tech">
+                        <a href="#">Hi-Tech</a>
+                    </div>
+                    <div class="section-box psychedelic">
+                        <a href="#">Психоделика</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="#">Русский</a> |
+                    <a href="#">Помощь</a> |
+                    <a href="#">Ещё</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">О компании</a>
+                        <a class="dropdown-item" href="#">Соглашения и политики</a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-right">
+                    <p>© 2024 ООО "RNDM_STARS"</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
